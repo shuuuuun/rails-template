@@ -15,6 +15,9 @@ Vagrantfile
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/cache/.keep
+!/tmp/pids/.keep
+!/tmp/sockets/.keep
 
 # Ignore Byebug command history file.
 .byebug_history
