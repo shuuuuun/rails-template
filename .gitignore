@@ -6,17 +6,18 @@
 *.vagrant
 Vagrantfile
 
-# Ignore upload files.
-/public/uploads
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/tmp/*
 !/log/.keep
-/tmp
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
 
 # Ignore env settings.
 config/database.yml
@@ -27,3 +28,5 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 
+# Ignore upload files.
+/public/uploads/*
