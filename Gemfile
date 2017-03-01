@@ -44,7 +44,7 @@ gem 'config'
 # Frontend
 gem 'meta-tags'
 gem 'slim-rails'
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 # gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
