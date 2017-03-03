@@ -3,19 +3,10 @@
 # Start Puma with next command:
 # RAILS_ENV=production bundle exec puma -C ./config/puma.rb
 
-# uncomment and customize to run in non-root path
-# note that config/gitlab.yml web path should also be changed
-# ENV['RAILS_RELATIVE_URL_ROOT'] = "/gitlab"
-
 require 'yaml'
 
-# ROOT
 RAILS_ROOT = File.expand_path(File.dirname(__FILE__) + '/..')
-
-# RAILS ENV
 RAILS_ENV = ENV['RAILS_ENV'] || 'development'
-
-# config
 CONFIG = YAML.load_file(RAILS_ROOT + '/config/puma.yml')[RAILS_ENV]
 
 puts 'env:' + RAILS_ENV
