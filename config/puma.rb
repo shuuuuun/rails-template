@@ -9,8 +9,9 @@ RAILS_ROOT = File.expand_path("#{File.dirname(__FILE__)}/..")
 RAILS_ENV = ENV['RAILS_ENV'] || 'development'
 CONFIG = YAML.load_file("#{RAILS_ROOT}/config/puma.yml")[RAILS_ENV]
 
-puts "env: #{RAILS_ENV}"
+puts "root: #{RAILS_ROOT}"
 puts "dir: #{ENV['RAILS_RELATIVE_URL_ROOT']}"
+puts "env: #{RAILS_ENV}"
 
 # The directory to operate out of.
 #
