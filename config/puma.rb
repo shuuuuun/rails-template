@@ -45,7 +45,8 @@ state_path File.join(RAILS_ROOT, CONFIG['state'])
 # (“append”) specifies whether the output is appended, the default is
 # “false”.
 #
-stdout_redirect File.join(RAILS_ROOT, CONFIG['log']['stdout']), File.join(RAILS_ROOT, CONFIG['log']['stderr']), CONFIG['log']['append'] if CONFIG['log']
+stdout_redirect File.join(RAILS_ROOT, CONFIG['log']['stdout']),
+                File.join(RAILS_ROOT, CONFIG['log']['stderr']), CONFIG['log']['append'] if CONFIG['log']
 
 # Disable request logging.
 #
