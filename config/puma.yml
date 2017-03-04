@@ -24,8 +24,9 @@ development:
   log: false # disable stdout_redirect
 
 staging:
-  # dummy
+  <<: *defaults
+  daemonize: true
 
 production:
-  # dummy
-
+  <<: *defaults
+  daemonize: true
