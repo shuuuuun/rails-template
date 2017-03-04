@@ -59,12 +59,6 @@ state_path File.join(RAILS_ROOT, CONFIG['state'])
 stdout_redirect File.join(RAILS_ROOT, CONFIG['log']['stdout']),
                 File.join(RAILS_ROOT, CONFIG['log']['stderr']), CONFIG['log']['append'] if CONFIG['daemonize']
 
-# Disable request logging.
-#
-# The default is “false”.
-#
-# quiet
-
 # Configure “min” to be the minimum number of threads to use to answer
 # requests and “max” the maximum.
 #
