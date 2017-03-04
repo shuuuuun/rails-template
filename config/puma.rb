@@ -14,6 +14,16 @@ puts "root: #{RAILS_ROOT}"
 puts "dir: #{ENV['RAILS_RELATIVE_URL_ROOT']}"
 puts "env: #{RAILS_ENV}"
 
+# TODO: PORT未指定時もrails sならtcpで起動したい。
+# TODO: rails server -p 3000 で指定したportを取得したい。
+# TODO: 起動時の -d でデーモナイズできない。
+# rails serverで起動したのかpumaで起動したのか判別したい。
+# 起動時のオプションを読みたい。
+# $ bundle exec rails s -b 0.0.0.0
+# $ bundle exec puma -C config/puma.rb
+# puts 'daemonize: ' + CONFIG['daemonize'].to_s
+# puts 'port: ' + PORT.to_s
+
 # The directory to operate out of.
 #
 # The default is the current directory.
