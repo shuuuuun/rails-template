@@ -47,7 +47,7 @@ state_path File.join(RAILS_ROOT, CONFIG['state'])
 # “false”.
 #
 stdout_redirect File.join(RAILS_ROOT, CONFIG['log']['stdout']),
-                File.join(RAILS_ROOT, CONFIG['log']['stderr']), CONFIG['log']['append'] if CONFIG['log']
+                File.join(RAILS_ROOT, CONFIG['log']['stderr']), CONFIG['log']['append'] if CONFIG['daemonize']
 
 # Disable request logging.
 #

@@ -21,7 +21,6 @@ test:
 
 development:
   <<: *defaults
-  log: false # disable stdout_redirect
 
 staging:
   <<: *defaults
