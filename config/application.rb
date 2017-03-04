@@ -25,8 +25,9 @@ module RailsTemplate
     # change error field html output
     # config.action_view.field_error_proc = proc { |html_tag, instance| "<span class='field_with_errors'>#{html_tag}</span>".html_safe }
 
-    # disable generate assets
+    # disable generate assets and helper
     config.generators.stylesheets = false
     config.generators.javascripts = false
+    config.generators.helper      = false
   end
 end
