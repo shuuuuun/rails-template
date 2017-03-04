@@ -7,6 +7,7 @@ require 'yaml'
 
 RAILS_ROOT = File.expand_path("#{File.dirname(__FILE__)}/..")
 RAILS_ENV = ENV['RAILS_ENV'] || 'development'
+PORT = ENV['PORT']
 CONFIG = YAML.load_file("#{RAILS_ROOT}/config/puma.yml")[RAILS_ENV]
 
 puts "root: #{RAILS_ROOT}"
@@ -66,8 +67,11 @@ threads CONFIG['thread']['min'], CONFIG['thread']['max']
 #
 # The default is “tcp://0.0.0.0:9292”.
 #
-# bind 'tcp://0.0.0.0:9292'
-bind "unix://#{File.join(RAILS_ROOT, CONFIG['socket'])}"
+if PORT
+  bind "tcp://0.0.0.0:#{PORT}"
+else
+  bind "unix://#{File.join(RAILS_ROOT, CONFIG['socket'])}"
+end
 
 # Instead of “bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'” you
 # can also use the “ssl_bind” option.
