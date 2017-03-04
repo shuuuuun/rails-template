@@ -22,8 +22,10 @@ Vagrantfile
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore env settings.
+# Ignore database settings.
 config/database.yml
+
+# Ignore env settings.
 .env
 
 # Ignore local config files.
