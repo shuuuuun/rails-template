@@ -4,7 +4,7 @@ defaults: &defaults
     stderr:   "log/stderr.log"
     append:   true
   pid:        "tmp/pids/app.pid"
-  socket:     "tmp/sockets/puma.sock"
+  socket:     "tmp/sockets/app.sock"
   state:      "tmp/pids/puma.state"
   thread:
     min:      5
