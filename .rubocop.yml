@@ -44,6 +44,10 @@ Style/AsciiComments:
 Style/MultilineBlockChain:
   Enabled: false
 
+# alias_methodもOKにする
+Style/Alias:
+  Enabled: false
+
 Metrics/AbcSize:
   Max: 20
 
