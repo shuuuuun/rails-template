@@ -72,6 +72,8 @@ group :development do
   # gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   # gem 'rails_best_practices', require: false
+  gem 'railroady'
+  gem 'rails-erd'
 end
 
 group :test do
