@@ -19,5 +19,5 @@ chdir APP_ROOT do
   system! 'bin/rake diagram:all'
 
   puts "\n== Generating erd =="
-  system! 'bin/bundle exec erd'
+  system! 'bin/bundle exec erd --filename=doc/erd --filetype=svg'
 end
