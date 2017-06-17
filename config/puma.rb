@@ -4,10 +4,13 @@
 # RAILS_ENV=production bundle exec puma -C ./config/puma.rb
 
 require 'yaml'
+# require 'dotenv'
+
+# Dotenv.load
 
 RAILS_ROOT = File.expand_path("#{File.dirname(__FILE__)}/..")
 RAILS_ENV  = ENV['RAILS_ENV'] || 'development'
-PORT       = ENV['PORT']
+PORT       = ENV['PORT'] || 3000
 CONFIG     = YAML.load_file("#{RAILS_ROOT}/config/puma.yml")[RAILS_ENV]
 
 puts "root: #{RAILS_ROOT}"
@@ -15,6 +18,7 @@ puts "dir: #{ENV['RAILS_RELATIVE_URL_ROOT']}"
 puts "env: #{RAILS_ENV}"
 
 # TODO: PORT未指定時もrails sならtcpで起動したい。
+#       あれ、すでにそうなってる？bind "unix://...のほうを通ってるのに、tcpで起動してるっぽいぞ...？
 # TODO: rails server -p 3000 で指定したportを取得したい。
 # TODO: 起動時の -d でデーモナイズできない。
 # rails serverで起動したのかpumaで起動したのか判別したい。
@@ -22,7 +26,9 @@ puts "env: #{RAILS_ENV}"
 # $ bundle exec rails s -b 0.0.0.0
 # $ bundle exec puma -C config/puma.rb
 # puts 'daemonize: ' + CONFIG['daemonize'].to_s
-# puts 'port: ' + PORT.to_s
+puts 'port: ' + PORT.to_s
+# なんかport指定が上手くいかないと思ったら、起動時の-b 0.0.0.0を消したらいけた...?
+# あーでもipで接続できないわ、できるふうに表示されてるけど
 
 # The directory to operate out of.
 #
@@ -69,13 +75,10 @@ threads CONFIG['thread']['min'], CONFIG['thread']['max']
 # Bind the server to “url”. “tcp://”, “unix://” and “ssl://” are the only
 # accepted protocols.
 #
-# The default is “tcp://0.0.0.0:9292”.
-#
-if PORT
-  bind "tcp://0.0.0.0:#{PORT}"
-else
-  bind "unix://#{File.join(RAILS_ROOT, CONFIG['socket'])}"
-end
+port PORT
+bind "unix://#{File.join(RAILS_ROOT, CONFIG['socket'])}"
+# これだと両方起動しちゃうわ
+
 
 # Instead of “bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'” you
 # can also use the “ssl_bind” option.
