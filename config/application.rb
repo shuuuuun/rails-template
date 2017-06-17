@@ -22,8 +22,9 @@ module RailsTemplate
     config.i18n.default_locale = :ja
     config.i18n.fallbacks = [:en]
 
-    # add autoload path
-    # config.autoload_paths += %W(#{config.root}/lib)
+    # autoload path
+    # config.autoload_paths   += %W(#{config.root}/lib)
+    # config.eager_load_paths += %W(#{config.root}/lib)
 
     # change error field html output
     # config.action_view.field_error_proc = proc { |html_tag, instance| "<span class='field_with_errors'>#{html_tag}</span>".html_safe }
@@ -32,5 +33,8 @@ module RailsTemplate
     config.generators.stylesheets = false
     config.generators.javascripts = false
     config.generators.helper      = false
+
+    # helperの自動読み込みをしない
+    # config.action_controller.include_all_helpers = false
   end
 end
