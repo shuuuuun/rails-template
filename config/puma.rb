@@ -137,3 +137,7 @@ end
 # activate_control_app 'unix:///var/run/pumactl.sock'
 # activate_control_app 'unix:///var/run/pumactl.sock', { auth_token: '12345' }
 # activate_control_app 'unix:///var/run/pumactl.sock', { no_token: true }
+
+
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
