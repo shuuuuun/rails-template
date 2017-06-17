@@ -207,7 +207,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   railroady
-  rails (~> 5.1.0)
+  rails (~> 5.1.1)
   rails-erd
   rubocop
   sass-globbing
